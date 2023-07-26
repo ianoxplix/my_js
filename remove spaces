@@ -1,0 +1,4 @@
+const str = " pushing this to my git "
+const regex = /\s+/g;
+const res = str.replace(regex,'');
+console.log(res);
