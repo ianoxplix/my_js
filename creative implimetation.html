@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extract First Number</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<h2>Extract First Number</h2>
+
+<form id="numberForm">
+  <label for="inputText">Enter text containing numbers:</label><br>
+  <input type="text" id="inputText" name="inputText" placeholder="e.g., This is 986 please save me 445!"><br><br>
+  <button type="button" onclick="extractNumber()">Extract First Number</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function extractNumber() {
+  const inputText = document.getElementById('inputText').value;
+  const regex = /\d+/;
+  const firstNum = inputText.match(regex);
+  
+  if (firstNum !== null) {
+    document.getElementById('result').textContent = "First number found: " + firstNum[0];
+  } else {
+    document.getElementById('result').textContent = "No numbers found in the input.";
+  }
+}
+</script>
+
+</body>
+</html>
